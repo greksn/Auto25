@@ -12,7 +12,7 @@ Auto24 konkurent (LTAT.05.004 - Veebirakenduste loomine)
   To make one, create a `virtualenv` called `autoportaalenv` into the same folder as `manage.py` 
   (follow guide https://docs.djangoproject.com/en/2.1/howto/windows/)
 
-- Install Django, Gunicorn and Psycopg2 in the virtual env, using the command pip install django gunicorn psycopg2
+- Install Django, Gunicorn and Psycopg2 in the virtual env, using the command `pip install django gunicorn psycopg2`
 
 - Create a local Postgre database OR connect to the test environment database (it is accepting external connections at the moment):
 
