@@ -1,6 +1,7 @@
 # Auto25
 Auto24 konkurent (LTAT.05.004 - Veebirakenduste loomine)
 
+Testkeskkond: http://142.93.175.27/
 
 ### To deploy this application on your local machine:
 **__Make sure the latest Python version is installed and your command prompt is running with administrator rights.__**
