@@ -23,7 +23,7 @@ Testkeskkond: http://142.93.175.27/
   ```
   ALLOWED_HOSTS = ['142.93.110.21', '127.0.0.1']
 
-  'HOST': '142.93.110.21',
+  'HOST': '142.93.175.27',
   'PORT': '5432'
   ```
 - In the `manage.py` directory, run the command `python manage.py runserver`
