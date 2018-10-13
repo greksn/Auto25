@@ -21,7 +21,7 @@ Testkeskkond: http://142.93.175.27/
   
   Open `settings.py` and edit the following settings:
   ```
-  ALLOWED_HOSTS = ['142.93.110.21', '127.0.0.1']
+  ALLOWED_HOSTS = ['142.93.175.27', '127.0.0.1']
 
   'HOST': '142.93.175.27',
   'PORT': '5432'
