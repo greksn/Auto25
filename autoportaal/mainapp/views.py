@@ -15,3 +15,6 @@ def foorumid(request):
 
 def uudised(request):
     return render(request, 'mainapp/uudised.html', {'nbar': 'uudised'})
+
+def add_post(request):
+    return render(request, 'mainapp/add_post.html',{'nbar': 'add_post'})

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
@@ -7,60 +8,66 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
     <title>Auto 25</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-          crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-          crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
 </head>
+
 <body>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-    <a class="navbar-brand" href="{% url 'index' %}">Auto 25</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="{% url 'index' %}">Auto 25</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item{% if nbar == 'uued' %} active{% endif %}">
-                <a class="nav-link" href="{% url 'uued' %}">Uued soidukid</a>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item{% if nbar == 'uued' %} active{% endif %}">
+                    <a class="nav-link" href="{% url 'uued' %}">Uued soidukid</a>
+                </li>
+                <li class="nav-item{% if nbar == 'uudised' %} active{% endif %}">
+                    <a class="nav-link" href="{% url 'uudised' %}">Uudised</a>
+                </li>
+                <li class="nav-item{% if nbar == 'foorumid' %} active{% endif %}">
+                    <a class="nav-link" href="{% url 'foorumid' %}">Foorumid</a>
+                </li>
+                <li>
+                {% if user.is_authenticated %}
+                <li class="nav-item{% if nbar == 'add_post' %} active{% endif %}">
+                    <a class="nav-link" href="{% url 'add_post' %}">Lisa kuulutus</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="admin">admin</a>
+                </li>
+                {% endif %}
             </li>
-            <li class="nav-item{% if nbar == 'uudised' %} active{% endif %}">
-                <a class="nav-link" href="{% url 'uudised' %}">Uudised</a>
-            </li>
-            <li class="nav-item{% if nbar == 'foorumid' %} active{% endif %}">
-                <a class="nav-link" href="{% url 'foorumid' %}">Foorumid</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            {% csrf_token %}
-            <input class="form-control mr-sm-2" type="search" placeholder="Otsi" aria-label="Search">
-            <button class="btn btn-outline-primary mr-1" type="submit">Otsi</button>
-            <a href="{% url 'login' %}" class="btn btn-outline-success mr-1">Log in</a>
-        </form>
-<<<<<<< HEAD
-=======
-        {% if user.is_authenticated %}
-            <div class="text-white">{{ user }}</div>
-            <a class="btn btn-outline-success my-sm-1" href="{% url 'account_logout' %}">Logi välja</a>
-        {% else %}
-            <a class="btn btn-outline-success my-sm-1" href="{% url 'login' %}">Logi sisse</a>
-        {% endif %}
->>>>>>> ae32cbad6f7f6016f337996c2f851af28326a32f
-    </div>
-</nav>
-{% block content %}
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                {% csrf_token %}
+                <input class="form-control mr-sm-2" type="search" placeholder="Otsi" aria-label="Search">
+                <button class="btn btn-outline-primary mr-1" type="submit">Otsi</button>
 
-{% endblock content %}
+                {% if user.is_authenticated %}
+                <div class="text-white">{{ user }}</div>
+                <a class="btn btn-outline-success my-sm-1" href="{% url 'account_logout' %}">Logi välja</a>
+                {% else %}
+                <a class="btn btn-outline-success my-sm-1" href="{% url 'login' %}">Logi sisse</a>
+                {% endif %}
+            </form>
+        </div>
+    </nav>
+    {% block content %}
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    {% endblock content %}
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
-<script>
-    window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
-</script>
-<script src="../../assets/js/vendor/popper.min.js"></script>
-<script src="../../dist/js/bootstrap.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
+    </script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>
