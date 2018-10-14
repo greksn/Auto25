@@ -26,6 +26,9 @@ Testkeskkond: https://auto25.tk
   'HOST': '142.93.175.27',
   'PORT': '5432'
   ```
+  
+- In your machine, set the database password as a environment variable
+  
 - In the `manage.py` directory, run the command `python manage.py runserver`
 
 - Local server should be available at http://127.0.0.1:8000/ 
