@@ -1,7 +1,7 @@
 # Auto25
 Auto24 konkurent (LTAT.05.004 - Veebirakenduste loomine)
 
-Testkeskkond: http://142.93.175.27/
+Testkeskkond: https://auto25.tk
 
 ### To deploy this application on your local machine:
 **__Make sure the latest Python version is installed and your command prompt is running with administrator rights.__**
@@ -19,9 +19,9 @@ Testkeskkond: http://142.93.175.27/
 
   **Connecting to the test environment DB:**
   
-  Open `settings.py` and edit the following settings:
+  Open `settings.py` and make sure the settings are following:
   ```
-  ALLOWED_HOSTS = ['142.93.175.27', '127.0.0.1']
+  ALLOWED_HOSTS = ['142.93.175.27', '127.0.0.1', 'auto25.tk']
 
   'HOST': '142.93.175.27',
   'PORT': '5432'
