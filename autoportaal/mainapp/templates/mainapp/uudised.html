@@ -1,4 +1,19 @@
 {% extends 'mainapp/base.html' %}
 {% block content %}
-<h3>Uudised</h3>
+<div class="container">
+	<h5>Kolisime uuele aadressile: J.Liivi 2!</h5>
+	<div id="googleMap" style="width:100%;height:400px;"></div>
+	<script>
+		function myMap() {
+			var mapProp = {
+			    center: new google.maps.LatLng(58.378248, 26.714834),
+			    zoom: 17,
+			};
+			var mapDiv = document.getElementById("googleMap");
+			var map = new google.maps.Map(mapDiv, mapProp);
+			var marker = new google.maps.Marker({position:{lat: 58.378248, lng: 26.714834}, map: map, title: 'Asume siin!'});
+		}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDt6ULp7swN3LoLhxT4s4wAOz7YafT1W10&callback=myMap" async defer></script>
+</div>
 {% endblock content %}
