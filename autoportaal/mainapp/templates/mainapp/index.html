@@ -4,27 +4,29 @@
     <div class="container">
         <h1>Parim koht soiduki ostmiseks</h1>
     </div>
-    <div class="row form-group pb-4">
-        <div class="col-md-2 ml-3">
-            <input type="text" class="form-control" placeholder="vali mark">
+    <form action="" method="get">
+        <div class="row form-group pb-4">
+            {% csrf_token %}
+            <div class="col-md-2 pl-5">
+                <input type="text" class="form-control" placeholder="vali mark">
+            </div>
+            <div class="col-md-2 ">
+                <input type="text" class="form-control" placeholder="vali mudel">
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control" placeholder="aasta alates">
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control" placeholder="käigukast">
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control" placeholder="kütus">
+            </div>
+            <div class="col-md-2">
+                <input class="btn btn-primary" type="submit" value="Otsi">
+            </div>
         </div>
-        <div class="col-md-2">
-            <input type="text" class="form-control" placeholder="vali mudel">
-        </div>
-        <div class="col-md-1 p-0">
-            <input type="text" class="form-control" placeholder="aasta alates">
-        </div>
-        <div class="col-md-2">
-            <input type="text" class="form-control" placeholder="käigukast">
-        </div>
-        <div class="col-md-1 ">
-            <input type="text" class="form-control" placeholder="kütus">
-        </div>
-        <div class="col-md-2">
-            <p class="d-inline">täpsem otsing</p>
-            <i class="fas fa-chevron-down d-inline"></i>
-        </div>
-    </div>
+    </form>
 </div>
 <div class="row">
     <div class="container">
