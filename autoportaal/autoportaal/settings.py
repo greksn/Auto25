@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '142.93.175.27']
 # Application definition
 
 INSTALLED_APPS = [
+    'mainapp.apps.MainappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,8 +80,8 @@ DATABASES = {
         'NAME': 'autoportaal',
 	'USER': 'autoportaaluser',
 	'PASSWORD': 'TR5,P[8W$T=tcLns',
-	'HOST': 'localhost',
-	'PORT': '',
+	'HOST': '142.93.175.27',
+	'PORT': '5432',
     }
 }
 
