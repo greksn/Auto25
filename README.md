@@ -13,7 +13,8 @@ Testkeskkond: https://auto25.tk
   To make one, create a `virtualenv` called `autoportaalenv` into the same folder as `manage.py` 
   (follow guide https://docs.djangoproject.com/en/2.1/howto/windows/)
 
-- Install Django, Gunicorn and Psycopg2 in the virtual env, using the command `pip install django gunicorn psycopg2`
+- Install Django, Gunicorn, Django Allauth and Psycopg2 in the virtual env, using the command `pip install django gunicorn psycopg2 django-allauth`
+  
 
 - Create a local Postgre database OR connect to the test environment database (it is accepting external connections at the moment):
 
@@ -32,4 +33,6 @@ Testkeskkond: https://auto25.tk
 - In the `manage.py` directory, run the command `python manage.py runserver`
 
 - Local server should be available at http://127.0.0.1:8000/ 
+
+Logging in via Github/Facebook doesn't work on localhost due to their restrictions.
 

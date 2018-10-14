@@ -1,1 +1,21 @@
-<p>Hello</p>
+{% extends 'mainapp/base.html' %}
+{% block content %}
+
+<div class="container">
+    <h2 class="text-center">Vali, kuidas soovid sisse logida:</h2><br>
+    <div class="container text-center">
+        <div class="row text-white">
+            <div class="col-sm">
+                <a class="btn btn-primary btn-lg" href="/accounts/google/login/?process=login"><i class="fab fa-google"></i> Google</a>
+            </div>
+            <div class="col-sm">
+                <a class="btn btn-primary btn-lg" href="/accounts/facebook/login/?process=login"><i class="fab fa-facebook-square"></i> Facebook</a>
+            </div>
+            <div class="col-sm">
+                <a class="btn btn-primary btn-lg" href="/accounts/github/login/?process=login"><i class="fab fa-github-square"></i> Github</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
