@@ -1,50 +1,62 @@
-{% extends 'mainapp/base.html' %}
-{% block content %}
-<div class="bg-light">
-    <div class="container">
-        <h1>Parim koht soiduki ostmiseks</h1>
-    </div>
-    <form action="" method="get">
+<!DOCTYPE html >
+<html lang="en">
+
+<head>
+    <title>Auto 25</title>
+</head>
+
+<body>
+    {% extends 'mainapp/base.html' %}
+    {% block content %}
+    <div class="bg-light">
+        <div class="container">
+            <h1>Parim koht soiduki ostmiseks</h1>
+        </div>
+        <!-- <form action="" method="get"> -->
         <div class="row form-group pb-4">
             {% csrf_token %}
             <div class="col-md-2 pl-5">
-                <input type="text" class="form-control" placeholder="vali mark">
+                <input title="brand" type="text" class="form-control" placeholder="vali mark">
             </div>
             <div class="col-md-2 ">
-                <input type="text" class="form-control" placeholder="vali mudel">
+                <input title="model_car" type="text" class="form-control" placeholder="vali mudel">
             </div>
             <div class="col-md-2">
-                <input type="text" class="form-control" placeholder="aasta alates">
+                <input title="year" type="text" class="form-control" placeholder="aasta alates">
             </div>
             <div class="col-md-2">
-                <input type="text" class="form-control" placeholder="käigukast">
+                <input title="gearbo" type="text" class="form-control" placeholder="käigukast">
             </div>
             <div class="col-md-2">
-                <input type="text" class="form-control" placeholder="kütus">
+                <input title="fuel" type="text" class="form-control" placeholder="kütus">
             </div>
             <div class="col-md-2">
-                <input class="btn btn-primary" type="submit" value="Otsi">
+                <input title="search_car" class="btn btn-primary" type="submit" value="Otsi">
             </div>
         </div>
-    </form>
-</div>
-<div class="row">
-    <div class="container">
-        <div class="d-inline-block col-md-2 bg-success">
-            <img src="" alt="">
-            <p>.</p>
-            <p>BMW car</p>
-        </div>
-        <div class="d-inline-block col-md-2 bg-success">
-            <img src="" alt="">
-            <p>.</p>
-            <p>BMW car</p>
-        </div>
-        <div class="d-inline-block col-md-2 bg-success">
-            <img src="" alt="">
-            <p>.</p>
-            <p>BMW car</p>
+        <!-- </form> -->
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="d-inline-block col-md-2 bg-success">
+                <img src="green" alt="car_img">
+                <p>img</p>
+                <p>BMW M5</p>
+            </div>
+            <div class="d-inline-block col-md-2 bg-success">
+                <img src="red" alt="car_img">
+                <p>img</p>
+                <p>Totyta corolla</p>
+            </div>
+            <div class="d-inline-block col-md-2 bg-success">
+                <img src="green" alt="car_img">
+                <p>img</p>
+                <p>Mini cooper</p>
+            </div>
         </div>
     </div>
-</div>
-{% endblock content %}
+    {% endblock content %}
+
+</body>
+
+</html>
