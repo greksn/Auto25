@@ -1,31 +1,32 @@
 {% extends 'mainapp/base.html' %}
+{% load i18n %}
 {% block title %}Pealeht{% endblock %}
 {% block description %}Auto25 koduleht{% endblock %}
 {% block content %}
 <div class="bg-light">
     <div class="container">
-        <h1>Parim koht soiduki ostmiseks</h1>
+        <h1>{% trans "Parim koht soiduki ostmiseks" %}</h1>
     </div>
     <!-- <form action="" method="get"> -->
     <div class="row form-group pb-4">
         {% csrf_token %}
         <div class="col-md-2 pl-5">
-            <input title="brand" type="text" class="form-control" placeholder="vali mark">
+            <input title="brand" type="text" class="form-control" placeholder="{% trans 'vali mark' %}">
         </div>
         <div class="col-md-2 ">
-            <input title="model_car" type="text" class="form-control" placeholder="vali mudel">
+            <input title="model_car" type="text" class="form-control" placeholder="{% trans 'vali mudel' %}">
         </div>
         <div class="col-md-2">
-            <input title="year" type="text" class="form-control" placeholder="aasta alates">
+            <input title="year" type="text" class="form-control" placeholder="{% trans 'aasta alates' %}">
         </div>
         <div class="col-md-2">
-            <input title="gearbo" type="text" class="form-control" placeholder="käigukast">
+            <input title="gearbo" type="text" class="form-control" placeholder="{% trans 'käigukast' %}">
         </div>
         <div class="col-md-2">
-            <input title="fuel" type="text" class="form-control" placeholder="kütus">
+            <input title="fuel" type="text" class="form-control" placeholder="{% trans 'kütus' %}">
         </div>
         <div class="col-md-2">
-            <input title="search_car" class="btn btn-primary" type="submit" value="Otsi">
+            <input title="search_car" class="btn btn-primary" type="submit" value="{% trans 'Otsi' %}">
         </div>
     </div>
     <!-- </form> -->
