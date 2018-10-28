@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-28 22:52+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\mainapp\base.html:32
+msgid "Uued soidukid"
+msgstr "New vehicles"
+
+#: .\templates\mainapp\base.html:35
+msgid "Uudised"
+msgstr "News"
+
+#: .\templates\mainapp\base.html:38
+msgid "Foorumid"
+msgstr "Forums"
+
+#: .\templates\mainapp\base.html:47
+msgid "Lisa kuulutus"
+msgstr "New ad"
+
+#: .\templates\mainapp\base.html:61 .\templates\mainapp\base.html:62
+#: .\templates\mainapp\index.html:29
+msgid "Otsi"
+msgstr "Search"
+
+#: .\templates\mainapp\base.html:66
+msgid "Logi valja"
+msgstr "Log out"
+
+#: .\templates\mainapp\base.html:68
+msgid "Logi sisse"
+msgstr "Log in"
+
+#: .\templates\mainapp\index.html:8
+msgid "Parim koht soiduki ostmiseks"
+msgstr "Best place to buy a vehicle"
+
+#: .\templates\mainapp\index.html:14
+msgid "vali mark"
+msgstr "choose company"
+
+#: .\templates\mainapp\index.html:17
+msgid "vali mudel"
+msgstr "choose model"
+
+#: .\templates\mainapp\index.html:20
+msgid "aasta alates"
+msgstr "built after"
+
+#: .\templates\mainapp\index.html:23
+msgid "käigukast"
+msgstr "gearbox"
+
+#: .\templates\mainapp\index.html:26
+msgid "kütus"
+msgstr "fuel"
