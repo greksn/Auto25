@@ -6,6 +6,8 @@ class Custom_user(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     user_name = models.CharField(max_length=200)
     password = models.CharField(max_length=200)
+    e_mail = models.EmailField(max_length =254)
+    last_visted = models.CharField(max_length=200)
 
 
 class Post(models.Model):
