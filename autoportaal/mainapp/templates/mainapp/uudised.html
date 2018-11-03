@@ -36,7 +36,7 @@
         {% endfor %}
         {% endif %}
 
-
+        {% if user.is_authenticated %}
         <h3>Administraator - Uue uudise lisamine</h3>
         <form action="/uudised" method="post">
             {% csrf_token %}
@@ -54,6 +54,7 @@
             </div>
             <button type="submit" class="btn btn-success mb-2">Sisesta uudis</button>
         </form>
+        {% endif %}
     </div>
     <br>
 </div>
