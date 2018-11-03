@@ -18,36 +18,43 @@
             <li class="nav-item{% if nbar == 'foorumid' %} active{% endif %}">
                 <a class="nav-link" href="{% url 'foorumid' %}">{% trans "Foorumid" %}</a>
             </li>
-            <li>
-                {% get_current_language as LANGUAGE_CODE %}
-                {{ LANGUAGE_CODE }}
-            </li>
-            <li>
-                {% if user.is_authenticated %}
+            {% if user.is_authenticated %}
             <li class="nav-item{% if nbar == 'add_post' %} active{% endif %}">
                 <a class="nav-link" href="{% url 'add_post' %}">{% trans "Lisa kuulutus" %}</a>
             </li>
             <li>
-                <a class="nav-link" href="admin">admin</a>
+                <a class="nav-link" href="admin">Admin</a>
             </li>
             {% endif %}
             </li>
         </ul>
-        <div>
-            <a href="/language/eng">ENG</a>
-            <a href="/language/est">EST</a>
-        </div>
-        <form class="form-inline my-2 my-lg-0">
-            {% csrf_token %}
-            <input class="form-control mr-sm-2" type="search" placeholder='{% trans "Otsi" %}' aria-label="Search">
-            <button class="btn btn-outline-primary mr-1" type="submit">{% trans "Otsi" %}</button>
 
-            {% if user.is_authenticated %}
-            <div class="text-white">{{ user }}</div>
-            <a class="btn btn-outline-success my-sm-1" href="{% url 'account_logout' %}">{% trans "Logi valja" %}</a>
-            {% else %}
-            <a class="btn btn-outline-success my-sm-1" href="{% url 'login' %}">{% trans "Logi sisse" %}</a>
-            {% endif %}
-        </form>
+
+        {% if user.is_authenticated %}
+        <div class="dropdown nav-link pr-0">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                {{ user }}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#"><i class="fas fa-cog color text-dark"></i><span>Seaded</span></a>
+                <a class="dropdown-item" href="{% url 'account_logout' %}"><i
+                        class="fas fa-sign-out-alt text-dark"></i><span>Logi välja</span></a>
+            </div>
+        </div>
+        {% else %}
+        <a class="btn btn-primary my-sm-1" href="{% url 'login' %}">{% trans "Logi sisse" %}</a>
+        {% endif %}
+
+        <div class="dropdown nav-link navbar-right">
+            <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">
+                Keel
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/language/est"><img class="flag"
+                                                                   src="{% static 'img/estflag.png' %}"><span>Eesti</span></a>
+                <a class="dropdown-item" href="/language/eng"><img class="flag"
+                                                                   src="{% static 'img/usflag.png' %}"><span>Inglise</span></a>
+            </div>
+        </div>
     </div>
 </nav>
