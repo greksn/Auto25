@@ -1,0 +1,90 @@
+.navbar a {
+    color: white;
+    font-weight: bold;
+}
+
+.nav-link {
+    font-size: 1.25em;
+    margin-right: 0.25em;
+}
+
+.navbar-right {
+    margin-right: 3em;
+}
+
+.navbar-brand {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 2em;
+    margin-right: 1.5em;
+}
+
+.flag {
+    max-height: 2em;
+}
+
+.dropdown-item a {
+    color: black;
+}
+
+.dropdown-item span {
+    margin-left: 1em;
+    font-weight: normal;
+    color: black;
+
+}
+
+.intro-header {
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url('/static/img/header.jpg') no-repeat center center;
+    background-size: cover;
+    background-position: 0% 30%;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 17%;
+    padding-bottom: 17%;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+    font-size: 4em;
+    font-weight: 700;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.index-search {
+    padding: 2em 3em 2em 3em;
+    background-color: #00000055;
+}
+
+.mainsearch{
+    border-radius: 7px 0px 0px 7px;
+}
+
+.nopadding {
+    padding: 0px;
+}
+
+.search-title {
+    display:block;
+}
+
+.searchbutton {
+    width: 100%;
+    border-radius: 0px;
+}
+
+.additionalbutton {
+    margin-top: 1em;
+    border-radius: 0px;
+}

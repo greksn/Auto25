@@ -1,0 +1,53 @@
+{% load i18n %}
+{% load static %}
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" href="{% url 'index' %}">Auto 25</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item{% if nbar == 'uued' %} active{% endif %}">
+                <a class="nav-link" href="{% url 'uued' %}">{% trans "Uued soidukid" %}</a>
+            </li>
+            <li class="nav-item{% if nbar == 'uudised' %} active{% endif %}">
+                <a class="nav-link" href="{% url 'uudised' %}">{% trans "Uudised" %}</a>
+            </li>
+            <li class="nav-item{% if nbar == 'foorumid' %} active{% endif %}">
+                <a class="nav-link" href="{% url 'foorumid' %}">{% trans "Foorumid" %}</a>
+            </li>
+            <li>
+                {% get_current_language as LANGUAGE_CODE %}
+                {{ LANGUAGE_CODE }}
+            </li>
+            <li>
+                {% if user.is_authenticated %}
+            <li class="nav-item{% if nbar == 'add_post' %} active{% endif %}">
+                <a class="nav-link" href="{% url 'add_post' %}">{% trans "Lisa kuulutus" %}</a>
+            </li>
+            <li>
+                <a class="nav-link" href="admin">admin</a>
+            </li>
+            {% endif %}
+            </li>
+        </ul>
+        <div>
+            <a href="/language/eng">ENG</a>
+            <a href="/language/est">EST</a>
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+            {% csrf_token %}
+            <input class="form-control mr-sm-2" type="search" placeholder='{% trans "Otsi" %}' aria-label="Search">
+            <button class="btn btn-outline-primary mr-1" type="submit">{% trans "Otsi" %}</button>
+
+            {% if user.is_authenticated %}
+            <div class="text-white">{{ user }}</div>
+            <a class="btn btn-outline-success my-sm-1" href="{% url 'account_logout' %}">{% trans "Logi valja" %}</a>
+            {% else %}
+            <a class="btn btn-outline-success my-sm-1" href="{% url 'login' %}">{% trans "Logi sisse" %}</a>
+            {% endif %}
+        </form>
+    </div>
+</nav>

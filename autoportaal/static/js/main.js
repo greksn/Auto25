@@ -1,5 +1,9 @@
 $(document).ready(function(){
-    $("button").click(function(){
-        $(this).hide();
+    $(".search").focusin(function(){
+        $(".tip").fadeIn(1500);
     });
+    $(".search").focusout(function(){
+        $(".tip").fadeOut(500);
+    });
+    $(".dropdown-toggle").dropdown();
 });
