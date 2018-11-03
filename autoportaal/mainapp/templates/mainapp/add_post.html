@@ -2,12 +2,87 @@
 {% block title %}Uus kuulutus{% endblock %}
 {% block description %}Uue kuulutuse lisamine{% endblock %}
 {% block content %}
-<div>
-    <h3>Lisa kuulutus</h3>
-    <!-- <form action="" method="post">
-            <input type="text" placeholder="automark">
-            <input type="text" placeholder="auto mudel">
-            <input type="text" placeholder="hind">
-        </form> -->
+<div class="bg-light">
+    <div class="container bg-white ">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Lisa kuulutus</h3>
+            </div>
+        </div>
+        <article class="">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="mark">Mis on teie automark?</label>
+                        <input type="text" id="mark" placeholder="automark">
+                    </div>
+                </div>
+                <br> 
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="mudel">Mis on teie auto mudel?</label>
+                        <input type="text" id="mudel" placeholder="auto mudel">
+                    </div>
+                </div>
+                <br> 
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="hind">Mis on teie auto hind?</label>
+                        <input type="number" id="hind" placeholder="hind">
+                    </div>
+                </div>
+                <br> 
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="aasta">Mis aastal on teie auto registreeritud?</label>
+                        <input type="number" id="aasta" placeholder="hind">
+                    </div>
+                </div>
+                <br> 
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Mis on teie auto käigukast?</label>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-primary ">
+                                <input type="radio" name="options" id="manuaal" autocomplete="off" checked> Manuaal
+                            </label>
+                            <label class="btn btn-primary">
+                                <input type="radio" name="options" id="automaat" autocomplete="off"> Automaat
+                            </label>
+                            <label class="btn btn-primary">
+                                <input type="radio" name="options" id="hübriid" autocomplete="off"> Hübriid
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <br> 
+                <div class="row">
+                        <div class="col-md-3">
+                            <label>Mis on teie auto kütuse liik?</label>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-primary ">
+                                    <input type="radio" name="options" id="bensiin" autocomplete="off" checked> Bensiin
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio" name="options" id="diisel" autocomplete="off"> Diisel
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio" name="options" id="elekter" autocomplete="off"> Elekter
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="mark">Siia saate panna pilte oma autost</label>
+                        <input type="file" id="pildid">
+                    </div>
+                </div>
+                <br>
+            </form>
+        </article>
+    </div>
 </div>
 {% endblock content %}
