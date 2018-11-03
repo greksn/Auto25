@@ -8,11 +8,12 @@ from .models import Custom_user, Post
 class Custom_userInline(admin.StackedInline):
     model = Custom_user
     can_delete = False
-    verbose_name_plural = 'Custom users'
+    verbose_name_plural = 'Custom User'
 
 # Define a new User admin
 class UserAdmin(BaseUserAdmin):
     inlines = (Custom_userInline,)
 
+admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
 admin.site.register(Post)
