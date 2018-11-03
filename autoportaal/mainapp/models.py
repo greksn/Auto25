@@ -13,3 +13,7 @@ class Post(models.Model):
     gear_box = models.CharField(max_length=200)
     fuel = models.CharField(max_length=200)
     year = models.IntegerField(default=0)
+
+class Article(models.Model):
+    title = models.CharField(max_length=50)
+    text = models.CharField(max_length=5000)
