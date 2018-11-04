@@ -24,20 +24,18 @@ def uued(request):
     form = CarPostForm(request.POST)
     if form.is_valid():
       # process the data in form.cleaned_data as required
-      form_owner = User.pk
-      form_brand = form.cleaned_data['mark']
-      form_model = form.cleaned_data['mudel']
-      form_price = form.cleaned_data['hind']
-      form_gear_box = form.cleaned_data['title']
-      form_fuel = form.cleaned_data['title']
-      form_year = form.cleaned_data['aasta']
-      new_ad = Post(owner =form_owner, brand=form_brand, model=form_model, gear_box= form_gear_box, price=form_price, fuel=form_fuel, year= form_year)
-      new_ad.save()
+      # form_owner = User.pk
+      # form_brand = form.cleaned_data['mark']
+      # form_model = form.cleaned_data['mudel']
+      # form_price = form.cleaned_data['hind']
+      # form_gear_box = form.cleaned_data['title']
+      # form_fuel = form.cleaned_data['title']
+      # form_year = form.cleaned_data['aasta']
+      # new_ad = Post(owner =form_owner, brand=form_brand, model=form_model, gear_box= form_gear_box, price=form_price, fuel=form_fuel, year= form_year)
+      # new_ad.save()
       # redirect to a new URL:
       messages.success(request, 'Uudis edukalt lisatud!')
-      return HttpResponseRedirect(reverse('uued'))
-
-  # if a GET (or any other method) we'll create a blank form
+      return HttpResponseRedirect(reverse('add_post'))
   else:
     car_ads = Post.objects.all()
     return render(request, 'mainapp/uued.html', {'nbar': 'uued', 'car_ads': car_ads})
