@@ -55,7 +55,7 @@ def forumpost(request, id):
         p.save()
 
         messages.success(request, 'Uus postitus lisatud!')
-        return HttpResponseRedirect(reverse('forumpost', args=[11]))
+        return HttpResponseRedirect(reverse('forumpost', args=[id]))
     else:
         thread = Thread.objects.filter(id=id).first()
         posts = ForumPost.objects.all()
