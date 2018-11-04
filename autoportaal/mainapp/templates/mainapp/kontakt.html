@@ -1,0 +1,31 @@
+{% extends 'mainapp/base.html' %}
+{% block title %}Kontakt{% endblock %}
+{% block description %}Kontakt{% endblock %}
+{% block navbar %}
+{% include 'mainapp/partials/normal_navbar.html' %}
+{% endblock navbar %}
+{% block content %}
+<div class="container">
+	<br>
+    <div class="row">
+        <div class="col">
+            <div id="googleMap">
+                <script>myMap()</script>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card border-0">
+                <div class="card-body">
+                    <h5 class="card-title">AUTO 25</h5>
+                    <p class="card-text">J.Liivi 2, Tartu</p>
+                    <p class="card-text">Tel: +372 5555 2525</p>
+                    <p class="card-text">E-mail: auto25@auto25.ee</p>
+                    <br>
+                    <button onclick="hideMap()" class="btn btn-success mb-2" id="peidaNupp">Peida kaart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
+{% endblock content %}

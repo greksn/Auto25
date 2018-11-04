@@ -1,5 +1,6 @@
 from django import forms
-from .models import Article, Post
+from .models import Article, Thread, ForumPost, Post
+
 
 class ArticleForm(forms.ModelForm):
     class Meta:
@@ -9,4 +10,15 @@ class ArticleForm(forms.ModelForm):
 class CarPostForm(forms.ModelForm):
     class Meta:
         model = Post
+        fields = '__all__'
+
+class ThreadForm(forms.ModelForm):
+    class Meta:
+        model = Thread
+        fields = '__all__'
+
+
+class ForumPostForm(forms.ModelForm):
+    class Meta:
+        model = Thread
         fields = '__all__'
