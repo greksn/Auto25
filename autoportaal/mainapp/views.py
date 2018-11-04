@@ -45,11 +45,12 @@ def foorumid(request):
 
 
 def forumpost(request, id):
+    thread = Thread.objects.get(id=id)
+
     if request.method == 'POST':
         form = ForumPostForm(request.POST)
 
         form_text = form.data['text']
-        thread = Thread.objects.get(id=id)
 
         p = ForumPost(thread=thread, author=request.user, text=form_text)
         p.save()
@@ -58,7 +59,7 @@ def forumpost(request, id):
         return HttpResponseRedirect(reverse('forumpost', args=[id]))
     else:
         thread = Thread.objects.filter(id=id).first()
-        posts = ForumPost.objects.all()
+        posts = ForumPost.objects.filter(thread=thread)
         return render(request, 'mainapp/forumposts.html', {'nbar': 'foorumid', 'posts': posts, 'thread': thread})
 
 
