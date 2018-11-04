@@ -5,5 +5,16 @@
 {% include 'mainapp/partials/normal_navbar.html' %}
 {% endblock navbar %}
 {% block content %}
-<h3>Uued</h3>
+<div class="container">
+  <br>
+  {% for ad in car_ads %}
+  <div class="card mb-5">
+    <img class="card-img-top" src="//placehold.it/200" alt="Card image cap">
+    <div class="card-block p-3">
+      <h4 class="card-title">{{ ad.brand }} | {{ad.year}} </h4>
+    </div>
+  </div>
+</div>
+</div>
+{% endfor %}
 {% endblock content %}
