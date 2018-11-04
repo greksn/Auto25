@@ -3,4 +3,13 @@
 {% block description %}Auto25 portaali uued autod{% endblock %}
 {% block content %}
 <h3>Uued</h3>
+
+
+<div class="container">
+    {% for imgage in img %}
+    <img src="{{ imgage.pic.url }}" width="200" height="200" class="img">
+
+    {% endfor %}
+</div>
+
 {% endblock content %}
