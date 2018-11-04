@@ -5,9 +5,43 @@
 {% include 'mainapp/partials/normal_navbar.html' %}
 {% endblock navbar %}
 {% block content %}
-<br>
 <div class="container">
-	Kontakt
+	<br>
+    <div class="row">
+        <div class="col">
+            <div id="googleMap" style="width:100%;height:100%;">
+                <script>myMap()</script>
+            </div>
+        </div>
+        <div class="col">
+            <div class="details">
+                <div class="details-row">
+                    <span class="value">
+                        AUTO 25
+                    </span>
+                </div>
+                <div class="details-row">
+                    <span class="value">
+                        J.Liivi 2, Tartu
+                    </span>
+                </div>
+                <div class="details-row">
+                    <span class="value">
+                        Tel: +372 5555 5555
+                    </span>
+                </div>
+                <div class="details-row">
+                    <span class="value">
+                        E-mail: auto25@auto25.ee
+                    </span>
+                </div>
+                <br>
+                <div class="details-row">
+                    <button onclick="hideMap()" id="peidaNupp">Peida kaart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
 </div>
-<br>
 {% endblock content %}
