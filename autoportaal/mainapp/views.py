@@ -1,11 +1,13 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.utils import translation
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from .models import Article
-from .forms import ArticleForm
+from .models import Article, Thread, ForumPost
+from .forms import ArticleForm, ThreadForm, ForumPostForm
 from django.contrib import messages
 from django.urls import reverse
+from django.db.models import Count, Max
+from django.db.models import OuterRef, Subquery
 
 
 # Create your views here.
@@ -22,7 +24,42 @@ def uued(request):
 
 
 def foorumid(request):
-    return render(request, 'mainapp/foorumid.html', {'nbar': 'foorumid'})
+    if request.method == 'POST':
+        form = ArticleForm(request.POST)
+        if form.is_valid():
+            form_title = form.cleaned_data['title']
+            form_text = form.cleaned_data['text']
+            t = Thread(title=form_title)
+            t.save()
+
+            p = ForumPost(thread=t, author=request.user, text=form_text)
+            p.save()
+
+            messages.success(request, 'Uus teema lisatud!')
+            return HttpResponseRedirect(reverse('foorumid'))
+    else:
+        newest = ForumPost.objects.filter(thread=OuterRef('pk')).order_by('-pk')
+        threads = Thread.objects.annotate(replies=Count('forumpost'),
+                                          last_post_author=Subquery(newest.values('author')[:1]))
+        return render(request, 'mainapp/foorumid.html', {'nbar': 'uudised', 'threads': threads})
+
+
+def forumpost(request, id):
+    if request.method == 'POST':
+        form = ForumPostForm(request.POST)
+
+        form_text = form.data['text']
+        thread = Thread.objects.get(id=id)
+
+        p = ForumPost(thread=thread, author=request.user, text=form_text)
+        p.save()
+
+        messages.success(request, 'Uus postitus lisatud!')
+        return HttpResponseRedirect(reverse('forumpost', args=[11]))
+    else:
+        thread = Thread.objects.filter(id=id).first()
+        posts = ForumPost.objects.all()
+        return render(request, 'mainapp/forumposts.html', {'nbar': 'foorumid', 'posts': posts, 'thread': thread})
 
 
 def uudised(request):
@@ -37,6 +74,7 @@ def uudised(request):
             form_text = form.cleaned_data['text']
             p = Article(title=form_title, text=form_text)
             p.save()
+
             # redirect to a new URL:
             messages.success(request, 'Uudis edukalt lisatud!')
             return HttpResponseRedirect(reverse('uudised'))

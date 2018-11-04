@@ -67,7 +67,7 @@
     background-color: #00000055;
 }
 
-.mainsearch{
+.mainsearch {
     border-radius: 7px 0px 0px 7px;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .search-title {
-    display:block;
+    display: block;
 }
 
 .searchbutton {
@@ -87,4 +87,18 @@
 .additionalbutton {
     margin-top: 1em;
     border-radius: 0px;
+}
+
+.new-thread {
+    display: none;
+}
+
+.forum-thread {
+    font-weight: bold;
+    font-size: medium;
+    background-color: #E8E8E8;
+}
+
+.maxwidth {
+    width: 100%;
 }

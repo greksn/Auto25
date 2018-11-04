@@ -5,4 +5,7 @@ $(document).ready(function(){
     $(".search").focusout(function(){
         $(".tip").fadeOut(500);
     });
+    $("#newThreadButton").click(function(){
+        $(".new-thread").fadeIn(1000);
+    });
 });

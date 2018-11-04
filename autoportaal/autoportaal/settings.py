@@ -104,7 +104,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'autoportaal',
 	'USER': 'autoportaaluser',
-	'PASSWORD': os.environ.get("DB_PASSWORD", ''),
+	'PASSWORD': 'TR5,P[8W$T=tcLns',
 	'HOST': '142.93.175.27',
 	'PORT': '5432',
     }
