@@ -84,6 +84,8 @@ def uudised(request):
         articles = Article.objects.all()
         return render(request, 'mainapp/uudised.html', {'nbar': 'uudised', 'articles': articles})
 
+def kontakt(request):
+    return render(request, 'mainapp/kontakt.html', {'nbar': 'kontakt'})
 
 def langEng(request):
     translation.activate("en-GB")

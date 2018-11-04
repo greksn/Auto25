@@ -18,6 +18,9 @@
             <li class="nav-item{% if nbar == 'foorumid' %} active{% endif %}">
                 <a class="nav-link" href="{% url 'foorumid' %}">{% trans "Foorumid" %}</a>
             </li>
+            <li class="nav-item{% if nbar == 'kontakt' %} active{% endif %}">
+                <a class="nav-link" href="{% url 'kontakt' %}">{% trans "Kontakt" %}</a>
+            </li>
             {% if user.is_authenticated %}
             <li class="nav-item{% if nbar == 'add_post' %} active{% endif %}">
                 <a class="nav-link" href="{% url 'add_post' %}">{% trans "Lisa kuulutus" %}</a>
