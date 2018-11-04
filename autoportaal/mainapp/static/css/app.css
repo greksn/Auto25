@@ -3,6 +3,16 @@
     font-weight: bold;
 }
 
+@media (max-width: 576px) {
+    .navbar {
+        background: #343a40;
+    }
+}
+
+.navbar-light .navbar-toggler {
+    background: white;
+}
+
 .nav-link {
     font-size: 1.25em;
     margin-right: 0.25em;
