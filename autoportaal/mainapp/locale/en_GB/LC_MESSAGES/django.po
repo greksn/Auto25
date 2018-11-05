@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 14:49+0200\n"
+"POT-Creation-Date: 2018-11-05 15:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,27 +38,27 @@ msgstr "Search examples: 'diesel bmw', 'ford mondeo'"
 msgid "Täpsemad otsingusuvandid"
 msgstr "Additional parameters"
 
-#: .\templates\mainapp\index.html:50
+#: .\templates\mainapp\index.html:51
 msgid "Mark"
 msgstr "Company"
 
-#: .\templates\mainapp\index.html:53
+#: .\templates\mainapp\index.html:54
 msgid "Mudel"
 msgstr "Model"
 
-#: .\templates\mainapp\index.html:56
+#: .\templates\mainapp\index.html:57
 msgid "Aasta alates"
 msgstr "Year since"
 
-#: .\templates\mainapp\index.html:59
+#: .\templates\mainapp\index.html:60
 msgid "Aasta kuni"
 msgstr "Year until"
 
-#: .\templates\mainapp\index.html:62
+#: .\templates\mainapp\index.html:63
 msgid "Hind alates"
 msgstr "Price from"
 
-#: .\templates\mainapp\index.html:65
+#: .\templates\mainapp\index.html:66
 msgid "Hind kuni"
 msgstr "Price until"
 

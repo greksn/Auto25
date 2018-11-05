@@ -11,19 +11,22 @@
             <h3>Foorumid</h3>
         </div>
         <div class="col">
-            <a class="btn btn-outline-primary btn-sm" href="#" role="button" id="newThreadButton"><i class="fas fa-plus mr-2"></i>Loo uus
+            <a class="btn btn-outline-primary btn-sm" href="#" role="button" id="newThreadButton"><i
+                    class="fas fa-plus mr-2"></i>Loo uus
                 teema</a>
         </div>
     </div>
     <table class="table table-striped">
+        <div class="row">
         <thead>
         <tr>
-            <th scope="col-md-8">Teema pealkiri</th>
-            <th scope="col-md-2">Postitusi</th>
-            <th class="col-md-2">Viimane postitaja</th>
+            <th style="width: 70%">Teema pealkiri</th>
+            <th style="width: 15%">Postitusi</th>
+            <th style="width: 15%">Viimane postitaja</th>
         </tr>
         </thead>
         <tbody>
+        </div>
         {% for thread in threads %}
         <tr>
             <td><i class="fas fa-folder-open mr-2"></i><a href="/foorumid/{{ thread.id }}">{{ thread.title }}</a></td>
