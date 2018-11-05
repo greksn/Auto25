@@ -1,8 +1,14 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-28 22:52+0200\n"
+"POT-Creation-Date: 2018-11-05 14:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,55 +18,94 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\templates\mainapp\base.html:32
-msgid "Uued soidukid"
-msgstr "New vehicles"
+#: .\templates\mainapp\index.html:18
+msgid "Leia omale sobiv auto"
+msgstr "Find yourself a suitable vehicle"
 
-#: .\templates\mainapp\base.html:35
-msgid "Uudised"
-msgstr "News"
+#: .\templates\mainapp\index.html:27
+msgid "Otsi märksõna järgi, nt mudel, mark või mootori tüüp.."
+msgstr "Find by a keyword, ex. model, manufacturer or type of engine.."
 
-#: .\templates\mainapp\base.html:38
-msgid "Foorumid"
-msgstr "Forums"
-
-#: .\templates\mainapp\base.html:47
-msgid "Lisa kuulutus"
-msgstr "New ad"
-
-#: .\templates\mainapp\base.html:61 .\templates\mainapp\base.html:62
-#: .\templates\mainapp\index.html:29
+#: .\templates\mainapp\index.html:30
 msgid "Otsi"
 msgstr "Search"
 
-#: .\templates\mainapp\base.html:66
-msgid "Logi valja"
-msgstr "Log out"
+#: .\templates\mainapp\index.html:37
+msgid "Otsingu näited: 'diisel bmw', 'ford mondeo'"
+msgstr "Search examples: 'diesel bmw', 'ford mondeo'"
 
-#: .\templates\mainapp\base.html:68
+#: .\templates\mainapp\index.html:45
+msgid "Täpsemad otsingusuvandid"
+msgstr "Additional parameters"
+
+#: .\templates\mainapp\index.html:50
+msgid "Mark"
+msgstr "Company"
+
+#: .\templates\mainapp\index.html:53
+msgid "Mudel"
+msgstr "Model"
+
+#: .\templates\mainapp\index.html:56
+msgid "Aasta alates"
+msgstr "Year since"
+
+#: .\templates\mainapp\index.html:59
+msgid "Aasta kuni"
+msgstr "Year until"
+
+#: .\templates\mainapp\index.html:62
+msgid "Hind alates"
+msgstr "Price from"
+
+#: .\templates\mainapp\index.html:65
+msgid "Hind kuni"
+msgstr "Price until"
+
+#: .\templates\mainapp\partials\index_navbar.html:13
+msgid "Uued sõidukid"
+msgstr "New vehicles"
+
+#: .\templates\mainapp\partials\index_navbar.html:16
+#: .\templates\mainapp\partials\normal_navbar.html:16
+msgid "Uudised"
+msgstr "News"
+
+#: .\templates\mainapp\partials\index_navbar.html:19
+msgid "Foorum"
+msgstr "Forum"
+
+#: .\templates\mainapp\partials\index_navbar.html:22
+#: .\templates\mainapp\partials\normal_navbar.html:22
+msgid "Kontakt"
+msgstr "Contact"
+
+#: .\templates\mainapp\partials\index_navbar.html:28
+#: .\templates\mainapp\partials\normal_navbar.html:48
 msgid "Logi sisse"
 msgstr "Log in"
 
-#: .\templates\mainapp\index.html:8
-msgid "Parim koht soiduki ostmiseks"
-msgstr "Best place to buy a vehicle"
+#: .\templates\mainapp\partials\index_navbar.html:34
+#: .\templates\mainapp\partials\normal_navbar.html:53
+msgid "Keel"
+msgstr "Language"
 
-#: .\templates\mainapp\index.html:14
-msgid "vali mark"
-msgstr "choose company"
+#: .\templates\mainapp\partials\index_navbar.html:38
+msgid "Eesti"
+msgstr "Estonian"
 
-#: .\templates\mainapp\index.html:17
-msgid "vali mudel"
-msgstr "choose model"
+#: .\templates\mainapp\partials\index_navbar.html:40
+msgid "Inglise"
+msgstr "English"
 
-#: .\templates\mainapp\index.html:20
-msgid "aasta alates"
-msgstr "built after"
+#: .\templates\mainapp\partials\normal_navbar.html:13
+msgid "Uued soidukid"
+msgstr "New vehicles"
 
-#: .\templates\mainapp\index.html:23
-msgid "käigukast"
-msgstr "gearbox"
+#: .\templates\mainapp\partials\normal_navbar.html:19
+msgid "Foorumid"
+msgstr "Forums"
 
-#: .\templates\mainapp\index.html:26
-msgid "kütus"
-msgstr "fuel"
+#: .\templates\mainapp\partials\normal_navbar.html:26
+msgid "Lisa kuulutus"
+msgstr "New ad"
