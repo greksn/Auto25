@@ -4,6 +4,7 @@
 {% block navbar %}
 {% include 'mainapp/partials/index_navbar.html' %}
 {% endblock navbar %}
+{% load i18n %}
 
 {% block content %}
 
@@ -13,8 +14,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="intro-message">
+<<<<<<< HEAD
                     
                         <div class="comp-blue"><h1>Leia omale sobiv auto</h1></div>
+=======
+                    <h1>
+                        <div class="comp-blue">{% trans "Leia omale sobiv auto" %}</div>
+                    </h1>
+>>>>>>> 612e08c3c6d47e0527a6ac717044a538fe5a44ec
                     <hr>
 
                     <div class="container index-search">
@@ -22,36 +29,45 @@
                             <div class="row">
                                 <div class="col-md-9 nopadding">
                                     <input type="text" class="form-control mainsearch"
-                                           placeholder="Otsi märksõna järgi, nt mudel, mark või mootori tüüp..">
+                                           placeholder="{% trans 'Otsi märksõna järgi, nt mudel, mark või mootori tüüp..' %}">
                                 </div>
                                 <div class="col-md-3 nopadding">
-                                    <button type="submit" class="btn btn-primary searchbutton">Otsi</button>
+                                    <button type="submit" class="btn btn-primary searchbutton">{% trans "Otsi" %}</button>
+                                </div>
+                            </div>
+                            <div class="row tip">
+                                <div class="col-md-12 my-2">
+                                    <div class="container">
+                                        <div class="alert alert-primary tip py-0" style="display:none;">
+                                            {% trans "Otsingu näited: 'diisel bmw', 'ford mondeo'" %}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col nopadding">
                                     <hr class="intro-divider">
-                                    <h4>Täpsemad otsingusuvandid</h4>
+                                    <h4>{% trans "Täpsemad otsingusuvandid" %}</h4>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-2">
-                                    <input type="text" class="form-control" placeholder="Mark">
+                                    <input type="text" class="form-control" placeholder="{% trans 'Mark' %}">
                                 </div>
                                 <div class="col-lg-2">
-                                    <input type="text" class="form-control" placeholder="Mudel">
+                                    <input type="text" class="form-control" placeholder="{% trans 'Mudel' %}">
                                 </div>
                                 <div class="col-lg-2">
-                                    <input type="text" class="form-control" placeholder="Aasta alates">
+                                    <input type="text" class="form-control" placeholder="{% trans 'Aasta alates' %}">
                                 </div>
                                 <div class="col-lg-2">
-                                    <input type="text" class="form-control" placeholder="Aasta kuni">
+                                    <input type="text" class="form-control" placeholder="{% trans 'Aasta kuni' %}">
                                 </div>
                                 <div class="col-lg-2">
-                                    <input type="text" class="form-control" placeholder="Hind alates">
+                                    <input type="text" class="form-control" placeholder="{% trans 'Hind alates' %}">
                                 </div>
                                 <div class="col-lg-2">
-                                    <input type="text" class="form-control" placeholder="Hind kuni">
+                                    <input type="text" class="form-control" placeholder="{% trans 'Hind kuni' %}">
                                 </div>
                             </div>
                         </form>
