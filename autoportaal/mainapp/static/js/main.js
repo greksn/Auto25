@@ -1,8 +1,8 @@
 $(document).ready(function(){
-    $(".search").focusin(function(){
+    $(".mainsearch").focusin(function(){
         $(".tip").fadeIn(1500);
     });
-    $(".search").focusout(function(){
+    $(".mainsearch").focusout(function(){
         $(".tip").fadeOut(500);
     });
     $("#newThreadButton").click(function(){
