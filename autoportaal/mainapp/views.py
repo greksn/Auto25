@@ -8,6 +8,8 @@ from django.contrib import messages
 from django.urls import reverse
 from django.db.models import Count, Max
 from django.db.models import OuterRef, Subquery
+from django.core.mail import send_mail
+
 
 
 # Create your views here.
@@ -22,20 +24,27 @@ def login(request):
 def uued(request):
   if request.method == 'POST':
     form = CarPostForm(request.POST)
-    if form.is_valid():
-      # process the data in form.cleaned_data as required
-      # form_owner = User.pk
-      # form_brand = form.cleaned_data['mark']
-      # form_model = form.cleaned_data['mudel']
-      # form_price = form.cleaned_data['hind']
-      # form_gear_box = form.cleaned_data['title']
-      # form_fuel = form.cleaned_data['title']
-      # form_year = form.cleaned_data['aasta']
-      # new_ad = Post(owner =form_owner, brand=form_brand, model=form_model, gear_box= form_gear_box, price=form_price, fuel=form_fuel, year= form_year)
-      # new_ad.save()
-      # redirect to a new URL:
-      messages.success(request, 'Uudis edukalt lisatud!')
-      return HttpResponseRedirect(reverse('add_post'))
+    #process the data in form.cleaned_data as required
+    form_owner = request.user
+    form_brand = request.POST.get('brand', "None")
+    print(form_owner)
+    form_model = request.POST.get('model', "None")
+    form_price = request.POST.get('price', 0)
+    form_gear_box = request.POST.get('gear_box', "None")
+    form_fuel = request.POST.get('fuel', "None")
+    form_year = request.POST.get('year', 0)
+    form_pic = request.POST.get('pic', "None")
+    new_ad = Post(owner ="gregr", brand="form_brand", model="form_model", gear_box= "form_gear_box", price=0, fuel="form_fuel", year= 0, pic=form_pic)
+    #new_ad.save()
+    # redirect to a new URL:
+    messages.success(request, 'Auto edukalt lisatud!')
+    
+    send_mail('Auto 25 car successfully added','congratulations, you car ad is now up in auto25.tk.',
+        'teamAuto25@gmail.com',
+        [request.user.email],
+        fail_silently=False,
+    )
+    return HttpResponseRedirect(reverse('add_post'))
   else:
     car_ads = Post.objects.all()
     return render(request, 'mainapp/uued.html', {'nbar': 'uued', 'car_ads': car_ads})

@@ -7,13 +7,14 @@ class User(models.Model):
 
 
 class Post(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.CharField(max_length=200)
     brand = models.CharField(max_length=200)
     model = models.CharField(max_length=200)
     gear_box = models.CharField(max_length=200)
     price = models.FloatField(default=0)
     fuel = models.CharField(max_length=200)
     year = models.IntegerField(default=0)
+    pic = models.ImageField(upload_to="images")
 
 class Article(models.Model):
     title = models.CharField(max_length=50)

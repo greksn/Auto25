@@ -7,6 +7,21 @@
 {% block content %}
 <div class="bg-light">
     <div class="container bg-white ">
+
+        {% if messages %}
+        {% for message in messages %}
+        {% if message.tags == 'warning'%}
+        <div class="alert alert-warning" role="alert">
+            {{ message }}
+        </div>
+        {% else %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
         <div class="col-md-3">
             <h3>Lisa kuulutus</h3>
         </div>
@@ -15,29 +30,29 @@
             {% csrf_token %}
             <div class="form-group">
                 <div class="col-md-3">
-                    <label for="mark">Mis on teie automark?</label>
-                    <input class="form-control" type="text" id="mark" placeholder="automark">
+                    <label for="id_brand">Mis on teie automark?</label>
+                    <input class="form-control" type="text" id="id_brand" placeholder="automark">
                 </div>
             </div>
             <br>
             <div class="form-group">
                 <div class="col-md-3">
-                    <label for="mudel">Mis on teie auto mudel?</label>
-                    <input class="form-control" type="text" id="mudel" placeholder="auto mudel">
+                    <label for="id_model">Mis on teie auto mudel?</label>
+                    <input class="form-control" type="text" id="id_model" placeholder="auto mudel">
                 </div>
             </div>
             <br>
             <div class="form-group">
                 <div class="col-md-3">
-                    <label for="hind">Mis on teie auto hind?</label>
-                    <input class="form-control" type="number" id="hind" placeholder="hind">
+                    <label for="id_price">Mis on teie auto hind?</label>
+                    <input class="form-control" type="number" id="id_price" placeholder="hind">
                 </div>
             </div>
             <br>
             <div class="form-group">
                 <div class="col-md-3">
-                    <label for="aasta">Mis aastal on teie auto registreeritud?</label>
-                    <input class="form-control" type="number" id="aasta" placeholder="hind">
+                    <label for="id_year">Mis aastal on teie auto registreeritud?</label>
+                    <input class="form-control" type="number" id="id_year" placeholder="hind">
                 </div>
             </div>
             <br>
@@ -45,14 +60,8 @@
                 <div class="col-md-3">
                     <label>Mis on teie auto käigukast?</label>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary ">
-                            <input type="radio" name="options" id="manuaal" autocomplete="off" checked> Manuaal
-                        </label>
-                        <label class="btn btn-primary">
-                            <input type="radio" name="options" id="automaat" autocomplete="off"> Automaat
-                        </label>
-                        <label class="btn btn-primary">
-                            <input type="radio" name="options" id="hübriid" autocomplete="off"> Hübriid
+                        <label class="btn btn-primary" for="id_gear_box">
+                            <input type="radio" name="options" id="id_gear_box" autocomplete="off" checked> Manuaal
                         </label>
                     </div>
                 </div>
@@ -62,14 +71,8 @@
                 <div class="col-md-3">
                     <label>Mis on teie auto kütuse liik?</label>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary ">
-                            <input type="radio" name="options" id="bensiin" autocomplete="off" checked> Bensiin
-                        </label>
-                        <label class="btn btn-primary">
-                            <input type="radio" name="options" id="diisel" autocomplete="off"> Diisel
-                        </label>
-                        <label class="btn btn-primary">
-                            <input type="radio" name="options" id="elekter" autocomplete="off"> Elekter
+                        <label class="btn btn-primary" for="id_fuel">
+                            <input type="radio" name="options" id="id_fuel" autocomplete="off"> Elekter
                         </label>
                     </div>
                 </div>
@@ -78,11 +81,11 @@
             <div class="form-group">
                 <div class="col-md-3">
                     <label for="mark">Siia saate panna pilte oma autost</label>
-                    <input type="file" id="pildid" class="form-control-file">
+                    <input type="file" id="id_pic" class="form-control-file">
                 </div>
             </div>
             <div class="col-md-3">
-                <button type="submit" class="btn btn-success mb-2">Sisesta uudis</button>
+                <button type="submit" class="btn btn-success mb-2">Sisesta kuulutus</button>
             </div>
             <br>
         </form>
