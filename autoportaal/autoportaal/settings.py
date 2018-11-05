@@ -151,3 +151,8 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+EMAIL_HOST_PASSWORD = "autoparool"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "teamauto25@gmail.com"
+EMAIL_USE_TLS = True

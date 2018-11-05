@@ -23,20 +23,18 @@
             </ul>
             <ul class="navbar-nav ml-auto navbar-right">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">
-                        <button type="button" class="btn btn-outline-light">Logi sisse</button>
-                    </a>
+                        <button type="button" class="btn btn-outline-light"><a class="nav-link" href="{% url 'login' %}"></a>Logi sisse</a></button>
                 </li>
                 <li class="nav-item">
                     <div class="dropdown nav-link">
                         <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">
                             Keel
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu">
                             <a class="dropdown-item" href="/language/est"><img class="flag"
-                                                                   src="{% static 'img/estflag.png' %}"><span>Eesti</span></a>
+                                                                   src="{% static 'img/estflag.png' %}" alt="Estonia"><span>Eesti</span></a>
                             <a class="dropdown-item" href="/language/eng"><img class="flag"
-                                                                   src="{% static 'img/usflag.png' %}"><span>Inglise</span></a>
+                                                                   src="{% static 'img/usflag.png' %}" alt="English"><span>Inglise</span></a>
                         </div>
                     </div>
                 </li>
