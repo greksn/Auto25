@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATALOG>
+  <AUTO>
+    <MARK>BMW</MARK>
+    <MUDEL>X6</MUDEL>
+    <AASTA>2018</AASTA>
+    <HIND>125.00</HIND>
+  </AUTO>
+  <AUTO>
+    <MARK>Audi</MARK>
+    <MUDEL>A7</MUDEL>
+    <AASTA>1017</AASTA>
+    <HIND>99.99</HIND>
+  </AUTO>
+  <AUTO>
+    <MARK>Opel</MARK>
+    <MUDEL>Astra</MUDEL>
+    <AASTA>1999</AASTA>
+    <HIND>179.99</HIND>
+  </AUTO>
+</CATALOG>
