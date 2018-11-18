@@ -9,3 +9,6 @@ $(document).ready(function(){
         $(".new-thread").fadeIn(1000);
     });
 });
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='./js/jquery-3.3.1.js' type='text/javascript'%3E%3C/script%3E"));
+}
