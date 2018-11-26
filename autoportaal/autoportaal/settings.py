@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # The following apps are required:
     'django.contrib.sites',
 
+    'django_user_agents',
+    'tracking_analyzer',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -156,3 +158,5 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "teamauto25@gmail.com"
 EMAIL_USE_TLS = True
+
+#GEOIP_PATH = (os.path.join('', '\users\nõges\appdata\local\programs\python\python37-32\lib\site-packages'),)
