@@ -66,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_user_agents.middleware.UserAgentMiddleware',
 ]
 
 ROOT_URLCONF = 'autoportaal.urls'
@@ -159,4 +160,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "teamauto25@gmail.com"
 EMAIL_USE_TLS = True
 
-#GEOIP_PATH = (os.path.join('', '\users\nõges\appdata\local\programs\python\python37-32\lib\site-packages'),)
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+GEOIP_PATH =os.path.join(BASE_DIR, 'geoip')

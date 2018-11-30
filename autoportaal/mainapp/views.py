@@ -9,6 +9,7 @@ from django.urls import reverse
 from django.db.models import Count, Max
 from django.db.models import OuterRef, Subquery
 from django.core.mail import send_mail
+from tracking_analyzer.models import Tracker
 
 
 
@@ -87,6 +88,7 @@ def forumpost(request, id):
     else:
         thread = Thread.objects.filter(id=id).first()
         posts = ForumPost.objects.filter(thread=thread)
+        Tracker.objects.create_from_request(request, thread)
         return render(request, 'mainapp/forumposts.html', {'nbar': 'foorumid', 'posts': posts, 'thread': thread})
 
 
