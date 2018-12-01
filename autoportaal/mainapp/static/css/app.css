@@ -48,11 +48,11 @@
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: image-set(
+    background: url('/static/img/header.jpg') ;
+    /* background: image-set(
         url('/static/img/headerSmall.jpg') no-repeat center center 1x,
         url('/static/img/header.jpg') no-repeat center center 2x
-      );
-      
+      ); */
     background-size: cover;
     background-position: 0% 30%;
 }
