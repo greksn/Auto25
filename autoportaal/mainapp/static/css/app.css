@@ -48,14 +48,15 @@
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url('/static/img/header.jpg') ;
-    /* background: image-set(
-        url('/static/img/headerSmall.jpg') no-repeat center center 1x,
-        url('/static/img/header.jpg') no-repeat center center 2x
-      ); */
+    background: url('/static/img/headerSmall.jpg');
     background-size: cover;
     background-position: 0% 30%;
 }
+@media (min-width: 1080px) {
+    .intro-header {
+      background-image: url('/static/img/header.jpg');
+    }
+  }
 
 .intro-message {
     position: relative;
