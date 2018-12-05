@@ -1,37 +1,60 @@
 from django.test import TestCase, LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+chromeDriver = BASE_DIR +  "/mainapp/chromeDriver/chromedriver.exe"
 
-
-class ViewCommentsCase(LiveServerTestCase):
+class AllTests(LiveServerTestCase):
 
     def setUp(self):
-        self.selenium = webdriver.Firefox()
-        super(ViewCommentsCase, self).setUp()
+        self.selenium = webdriver.Chrome(chromeDriver)
+        super(AllTests, self).setUp()
 
     def tearDown(self):
         self.selenium.quit()
-        super(ViewCommentsCase, self).tearDown()
+        super(AllTests, self).tearDown()
 
-    def test_register(self):
+
+    def test_view_forum(self):
         selenium = self.selenium
-        #Opening the link we want to test
-        selenium.get('http://127.0.0.1:8000/foorumid/')
-        #find the form element
+        #Avame lehe, mida tahame testida
+        selenium.get('https://auto25.tk/foorumid')
+        # Kontrollim kas saime kätte
+        assert 'Teema pealkiri'  in selenium.page_source
 
-        #submit = selenium.find_element_by_name('register')
+        #Otsime element nimega pealkiri
+        pealkiri_link = selenium.find_element_by_link_text('pealkiri')
+        pealkiri_link.click()
+        assert '3123123'  in selenium.page_source
 
-        #Fill the form with data
+
+
+    # Ei saanud Goolge login tööle, seega kommenteerisin selle hektel välja      
+    #                       ||
+    #                       ˇˇ
+    # def test_google_login (self):
+    #     driver = self.selenium
+    #     mail_address = 'Sinu meili aadress'
+    #     password = 'parool'
+
+    #     url = 'https://www.google.com/accounts/Login?hl=ja&continue=http://www.google.co.jp/'
+    #     driver.get(url)
+
+    #     driver.find_element_by_id("identifierId").send_keys(mail_address)
+    #     driver.find_element_by_id("identifierNext").click()
+    #     driver.find_element_by_name("password").send_keys(password)
+    #     element = driver.find_element_by_id('passwordNext')
+    #     driver.execute_script("arguments[0].click();", element)
+
+
+    def test_search(self):
+        selenium = self.selenium
         
-        # first_name.send_keys('Yusuf')
-        # last_name.send_keys('Unary')
-        # username.send_keys('unary')
-        # email.send_keys('yusuf@qawba.com')
-        # password1.send_keys('123456')
-        # password2.send_keys('123456')
-
-        #submitting the form
-        #submit.send_keys(Keys.RETURN)
-
-        #check the returned result
-        assert 'Teema pealkiri' in selenium.page_source
+        selenium.get('https://auto25.tk')
+        assert 'Find yourself a suitable vehicle'  in selenium.page_source
+        
+        selenium.find_element_by_css_selector(".form-control.mainsearch").send_keys("Opel Astra")
+        selenium.find_element_by_css_selector(".btn.btn-primary.searchbutton").click()
+        new_url = selenium.current_url
+        assert "https://auto25.tk/?" in new_url

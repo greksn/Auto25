@@ -30,7 +30,7 @@
         </div>
         {% for thread in threads %}
         <tr itemscope itemtype="http://schema.org/DiscussionForumPosting">
-            <td><i class="fas fa-folder-open mr-2"></i><a href="/foorumid/{{ thread.id }}">{{ thread.title }}</a></td>
+            <td><i class="fas fa-folder-open mr-2"></i><a id={{thread.title}} href="/foorumid/{{ thread.id }}">{{ thread.title }}</a></td>
             <td><span class="badge badge-secondary">{{thread.replies}}</span></td>
             <td>{{thread.last_post_author}}</td>
         </tr>
