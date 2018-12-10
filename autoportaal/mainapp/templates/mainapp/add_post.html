@@ -27,9 +27,9 @@
             <h3>Lisa kuulutus</h3>
         </div>
         {% if user.is_authenticated %}
-        <form action="/uued" method="post">
+        <form action="/uued" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <div class="col-md-3">
                     <label for="id_brand">Mis on teie automark?</label>
                     <input class="form-control" type="text" id="id_brand" placeholder="automark">
@@ -84,7 +84,9 @@
                     <label for="mark">Siia saate panna pilte oma autost</label>
                     <input type="file" id="id_pic" class="form-control-file">
                 </div>
-            </div>
+            </div> -->
+            {{ form.as_p }}
+
             <div class="col-md-3">
                 <button type="submit" class="btn btn-success mb-2">Sisesta kuulutus</button>
             </div>

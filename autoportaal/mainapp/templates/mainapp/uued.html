@@ -6,17 +6,27 @@
 {% include 'mainapp/partials/normal_navbar.html' %}
 {% endblock navbar %}
 {% block content %}
+
 <div class="container">
+    {% for ad in car_ads %}
+    <div class="card mb-5" itemscope itemtype="http://schema.org/NewsArticle">
+      <div class="row no-gutters">
+          <div class="col-auto">
+              <img  src="{{ ad.pic.url }}" width="200" alt="Card image cap">
+          </div>
+          <div class="col">
+              <div class="card-block p-3">
+                  <h4 class="card-title">{{ ad.brand }}  </h4>
+                  <p class="card-text"> hind: {{ad.price}}</p>
+                  <p class="card-text"> aasta: {{ad.year}}</p>
+
+                  <a href="#" class="btn btn-primary">Vaata lähemalt</a>
+              </div>
+          </div>
+      </div>
+  </div>
+    {% endfor %}
   <br>
 </div>
 {% endblock content %}
 
-
-  <!-- {% for ad in car_ads %}
-  <div class="card mb-5">
-    <img class="card-img-top" src="//placehold.it/200" alt="Card image cap">
-    <div class="card-block p-3">
-      <h4 class="card-title">{{ ad.brand }} | {{ad.year}} </h4>
-    </div>
-  </div>
-  {% endfor %} -->

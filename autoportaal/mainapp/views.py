@@ -24,19 +24,12 @@ def login(request):
 
 def uued(request):
   if request.method == 'POST':
-    form = CarPostForm(request.POST)
-    #process the data in form.cleaned_data as required
-    form_owner = request.user
-    form_brand = request.POST.get('brand', "None")
-    print(form_owner)
-    form_model = request.POST.get('model', "None")
-    form_price = request.POST.get('price', 0)
-    form_gear_box = request.POST.get('gear_box', "None")
-    form_fuel = request.POST.get('fuel', "None")
-    form_year = request.POST.get('year', 0)
-    form_pic = request.POST.get('pic', "None")
-    new_ad = Post(owner ="gregr", brand="form_brand", model="form_model", gear_box= "form_gear_box", price=0, fuel="form_fuel", year= 0, pic=form_pic)
-    #new_ad.save()
+    form = CarPostForm(request.POST, request.FILES)
+    if form.is_valid():
+      form.save()
+    else:
+      print("errors")
+      print(form.errors)
     # redirect to a new URL:
     messages.success(request, 'Auto edukalt lisatud!')
     
@@ -45,8 +38,9 @@ def uued(request):
         [request.user.email],
         fail_silently=False,
     )
-    return HttpResponseRedirect(reverse('add_post'))
+    return HttpResponseRedirect(reverse('uued'))
   else:
+    form = CarPostForm()
     car_ads = Post.objects.all()
     return render(request, 'mainapp/uued.html', {'nbar': 'uued', 'car_ads': car_ads})
 
@@ -131,4 +125,6 @@ def langEst(request):
 
 @login_required
 def add_post(request):
-  return render(request, 'mainapp/add_post.html', {'nbar': 'add_post'})
+  if request.method == 'GET':
+    form = CarPostForm()
+  return render(request, 'mainapp/add_post.html', {'nbar': 'add_post', "form":form})
