@@ -45,13 +45,13 @@
 }
 
 .intro-header {
-    padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
     background: url('/static/img/headerSmall.jpg');
     background-size: cover;
     background-position: 0% 30%;
 }
+
 @media (min-width: 1080px) {
     .intro-header {
       background-image: url('/static/img/header.jpg');
@@ -123,4 +123,28 @@
     height: 100%;
     min-width: 200px;
     min-height: 200px;
+}
+
+.primarycolor {
+    color: #007bff;
+}
+
+.recent-cars .row {
+    margin-top: 1em;
+}
+
+.recent-cars {
+    border-top: 2px solid #007bff;
+    margin-bottom: 2em;
+    background-color: #F8F8F8;
+    border-radius: 0 0 0.5em 0.5em;
+}
+.recent-cars .card {
+    width: 90%;
+    border: none;
+}
+
+.recent-cars .card-img-top {
+    width:auto;
+    max-height:150px;
 }

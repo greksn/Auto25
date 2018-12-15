@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY_VEEBIRAKENDUSED", ''),
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '142.93.175.27', 'auto25.tk']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '142.93.175.27', 'auto25.tk']
 
 
 # Application definition

@@ -15,7 +15,8 @@ from tracking_analyzer.models import Tracker
 
 # Create your views here.
 def index(request):
-  return render(request, 'mainapp/index.html', {'nbar': 'index'})
+  car_ads = Post.objects.all().order_by('-pk')[:8]
+  return render(request, 'mainapp/index.html', {'nbar': 'index', 'car_ads': car_ads})
 
 
 def login(request):
@@ -32,7 +33,7 @@ def uued(request):
       print(form.errors)
     # redirect to a new URL:
     messages.success(request, 'Auto edukalt lisatud!')
-    
+
     send_mail('Auto 25 car successfully added','congratulations, you car ad is now up in auto25.tk.',
         'teamAuto25@gmail.com',
         [request.user.email],
@@ -40,7 +41,6 @@ def uued(request):
     )
     return HttpResponseRedirect(reverse('uued'))
   else:
-    form = CarPostForm()
     car_ads = Post.objects.all()
     return render(request, 'mainapp/uued.html', {'nbar': 'uued', 'car_ads': car_ads})
 

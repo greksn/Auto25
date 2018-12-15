@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="intro-message">
-                        <h1 class="intro-h1">
+                    <h1 class="intro-h1">
                         <div class="comp-blue ">{% trans "Leia omale sobiv auto" %}</div>
                     </h1>
                     <hr>
@@ -28,7 +28,8 @@
                                            placeholder="{% trans 'Otsi märksõna järgi, nt mudel, mark või mootori tüüp..' %}">
                                 </div>
                                 <div class="col-md-3 nopadding">
-                                    <button type="submit" class="btn btn-primary searchbutton">{% trans "Otsi" %}</button>
+                                    <button type="submit" class="btn btn-primary searchbutton">{% trans "Otsi" %}
+                                    </button>
                                 </div>
                             </div>
                             <div class="row tip">
@@ -73,7 +74,27 @@
                 </div>
             </div>
         </div>
-
     </div>
+</div>
+<div class="container">
+    <div class="row">
+        <h5 class="mt-5">Viimati lisatud kuulutused</h5>
+        <div class="col-lg-12 recent-cars pt-3 pb-4">
+            <div class="row">
+                {% for ad in car_ads %}
+                <div class="col-lg-3">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ ad.pic.url }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ ad.brand }} {{ ad.model }}</h5>
+                            <span class="float-left">{{ ad.year }}</span><span class="float-right"><strong class="primarycolor">{{ ad.price|stringformat:"i"  }}€</strong></span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 {% endblock content %}

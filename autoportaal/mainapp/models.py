@@ -11,7 +11,7 @@ class Post(models.Model):
     brand = models.CharField(max_length=200)
     model = models.CharField(max_length=200)
     gear_box = models.CharField(max_length=200)
-    price = models.FloatField(default=0)
+    price = models.IntegerField(default=0)
     fuel = models.CharField(max_length=200)
     year = models.IntegerField(default=0)
     pic = models.ImageField(upload_to="images")
