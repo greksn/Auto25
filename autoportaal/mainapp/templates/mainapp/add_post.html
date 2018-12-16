@@ -1,4 +1,5 @@
 {% extends 'mainapp/base.html' %}
+{% load widget_tweaks %}
 {% block title %}Lisa kuulutus - Auto25, suurim valik uusi ja kasutatud sõidukeid Eestis{% endblock %}
 {% block description %}Uue kuulutuse lisamine Auto25 portaali{% endblock %}
 {% block keywords %}lisa postitus, foorum, autod, kuulutused, mark, mudel, ferrari, bmw, audi, lada{% endblock %}
@@ -6,93 +7,61 @@
 {% include 'mainapp/partials/normal_navbar.html' %}
 {% endblock navbar %}
 {% block content %}
-<div class="bg-light">
-    <div class="container bg-white ">
+<!--suppress XmlInvalidId -->
 
-        {% if messages %}
-        {% for message in messages %}
-        {% if message.tags == 'warning'%}
-        <div class="alert alert-warning" role="alert">
-            {{ message }}
-        </div>
-        {% else %}
-        <div class="alert alert-success" role="alert">
-            {{ message }}
-        </div>
-        {% endif %}
-        {% endfor %}
-        {% endif %}
+<div class="container graybg mt-4">
 
-        <div class="col-md-3">
-            <h3>Lisa kuulutus</h3>
-        </div>
-        {% if user.is_authenticated %}
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'warning'%}
+    <div class="alert alert-warning" role="alert">
+        {{ message }}
+    </div>
+    {% else %}
+    <div class="alert alert-success" role="alert">
+        {{ message }}
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    <div class="col-md-3">
+        <h3 class="mt-3">Lisa kuulutus</h3>
+    </div>
+    <hr>
+    {% if user.is_authenticated %}
+    <div class="col-lg-6">
         <form action="/uued" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <!-- <div class="form-group">
-                <div class="col-md-3">
-                    <label for="id_brand">Mis on teie automark?</label>
-                    <input class="form-control" type="text" id="id_brand" placeholder="automark">
-                </div>
-            </div>
-            <br>
-            <div class="form-group">
-                <div class="col-md-3">
-                    <label for="id_model">Mis on teie auto mudel?</label>
-                    <input class="form-control" type="text" id="id_model" placeholder="auto mudel">
-                </div>
-            </div>
-            <br>
-            <div class="form-group">
-                <div class="col-md-3">
-                    <label for="id_price">Mis on teie auto hind?</label>
-                    <input class="form-control" type="number" id="id_price" placeholder="hind">
-                </div>
-            </div>
-            <br>
-            <div class="form-group">
-                <div class="col-md-3">
-                    <label for="id_year">Mis aastal on teie auto registreeritud?</label>
-                    <input class="form-control" type="number" id="id_year" placeholder="hind">
-                </div>
-            </div>
-            <br>
-            <div class="form-group">
-                <div class="col-md-3">
-                    <label>Mis on teie auto käigukast?</label>
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary" for="id_gear_box">
-                            <input type="radio" name="options" id="id_gear_box" autocomplete="off" checked> Manuaal
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="form-group">
-                <div class="col-md-3">
-                    <label>Mis on teie auto kütuse liik?</label>
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary" for="id_fuel">
-                            <input type="radio" name="options" id="id_fuel" autocomplete="off"> Elekter
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="form-group">
-                <div class="col-md-3">
-                    <label for="mark">Siia saate panna pilte oma autost</label>
-                    <input type="file" id="id_pic" class="form-control-file">
-                </div>
-            </div> -->
-            {{ form.as_p }}
 
-            <div class="col-md-3">
-                <button type="submit" class="btn btn-success mb-2">Sisesta kuulutus</button>
+            {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+            {% endfor %}
+
+            {% for field in form.visible_fields %}
+            {% if field.name == "pic" %}
+            <div class="custom-file">
+                <input type="file" name="pic" accept="image/*" class="custom-file-input" required="" id="id_pic">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+            {% else %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field|add_class:'form-control' }}
+                {% for error in field.errors %}
+                <span class="help-block">{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            <div class="col-md-3 mt-3 pl-0">
+                <button type="submit" class="btn btn-success mb-2">Sisesta uus kuulutus</button>
             </div>
             <br>
         </form>
-        {% endif %}
     </div>
+    {% endif %}
 </div>
+
 {% endblock content %}

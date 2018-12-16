@@ -78,20 +78,25 @@
 </div>
 <div class="container">
     <div class="row">
-        <h5 class="mt-5">Viimati lisatud kuulutused</h5>
-        <div class="col-lg-12 graybg pt-3 pb-4">
+        <div class="float-left"><h5 class="mt-5 float-left">Viimati lisatud kuulutused</h5></div>
+        <div class="col-lg-12 graybg pt-3 pb-4 pr-1">
             <div class="row">
                 {% for ad in car_ads %}
-                <div class="col-lg-3">
+                <div class="col-lg-3 pr-0 mr-0">
                     <div class="card recent-car">
                         <img class="card-img-top" src="{{ ad.pic.url }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title"><a class="carlink" href="/auto/{{ ad.id }}">{{ ad.brand }} {{ ad.model }}</a></h5>
-                            <span class="float-left">{{ ad.year }}</span><span class="float-right"><strong class="primarycolor">{{ ad.price|stringformat:"i"  }}€</strong></span>
+                            <span class="float-left">{{ ad.year }}</span><span class="float-right"><strong
+                                class="primarycolor">{{ ad.price|stringformat:"i"  }}€</strong></span>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
+            </div>
+            <div class="mt-4 mr-3 text-right">
+                <a class="btn btn-success recent-button mr-2 px-3" href="{% url 'add_post' %}"><i class="fas fa-plus mr-2"></i>Lisa enda kuulutus</a>
+                <a class="btn btn-primary recent-button ml-2" href="{% url 'uued' %}"><i class="far fa-eye mr-3"></i>Vaata kõiki</a>
             </div>
         </div>
     </div>

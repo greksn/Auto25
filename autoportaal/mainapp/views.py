@@ -32,7 +32,7 @@ def uued(request):
       print("errors")
       print(form.errors)
     # redirect to a new URL:
-    messages.success(request, 'Auto edukalt lisatud!')
+    messages.success(request, 'Lisasid uue kuulutuse!')
 
     send_mail('Auto 25 car successfully added','congratulations, you car ad is now up in auto25.tk.',
         'teamAuto25@gmail.com',

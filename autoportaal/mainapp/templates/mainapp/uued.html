@@ -8,19 +8,34 @@
 {% block content %}
 
 <div class="container">
-    {% for ad in car_ads %}
-    <div class="card mb-5" itemscope itemtype="http://schema.org/NewsArticle">
-      <div class="row no-gutters">
-          <div class="col-auto">
-              <img  src="{{ ad.pic.url }}" width="200" alt="Card image cap">
-          </div>
-          <div class="col">
-              <div class="card-block p-3">
-                  <h4 class="card-title">{{ ad.brand }}  </h4>
-                  <p class="card-text"> hind: {{ad.price}}</p>
-                  <p class="card-text"> aasta: {{ad.year}}</p>
 
-                  <a href="/auto/{{ ad.id }}" class="btn btn-primary">Vaata lähemalt</a>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success mt-2" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% for ad in car_ads %}
+    <div class="card mt-4" itemscope itemtype="http://schema.org/NewsArticle">
+      <div class="row">
+          <div class="col-auto">
+              <img src="{{ ad.pic.url }}" width="135" height="85">
+          </div>
+          <div class="col-lg-4 justify-content-center align-self-center">
+              <div class="card-block height:100%;">
+                  <h5><a class="carlink" href="/auto/{{ ad.id }}">{{ ad.brand }} {{ ad.model }}</a></h5>
+              </div>
+          </div>
+          <div class="col-lg-3 justify-content-center align-self-center text-right">
+              <div class="card-block">
+                  <h6>{{ ad.year }}</h6>
+              </div>
+          </div>
+          <div class="col-lg-3 justify-content-center align-self-center text-right">
+              <div class="card-block">
+                  <h6 class="primarycolor">{{ ad.price}} €</h6>
               </div>
           </div>
       </div>

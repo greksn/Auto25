@@ -61,6 +61,7 @@
     background: url('/static/img/headerSmall.jpg');
     background-size: cover;
     background-position: 0% 30%;
+    padding-bottom:35px;
 }
 
 @media (min-width: 1080px) {
@@ -113,6 +114,11 @@
     width: 100%;
     border-radius: 0px;
 }
+
+.recent-button {
+    border-radius: 2em;
+}
+
 
 .additionalbutton {
     margin-top: 1em;
