@@ -23,10 +23,21 @@
 }
 
 .navbar-brand {
-    font-family: 'Oswald', sans-serif;
+    padding-bottom: 0px;
+    padding-top: 5px;
+    font-family: 'Teko', sans-serif;
     text-transform: uppercase;
-    font-size: 2em;
+    font-size: 2.2em;
     margin-right: 1.5em;
+}
+
+.navbar-light {
+    background-color: #00000033;
+}
+
+.navbar {
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .flag {
@@ -82,6 +93,10 @@
     background-color: #00000055;
 }
 
+.filter .form-control {
+    font-size: 80%;
+}
+
 .mainsearch {
     border-radius: 7px 0px 0px 7px;
 }
@@ -129,10 +144,6 @@
     color: #007bff;
 }
 
-.recent-cars .row {
-    margin-top: 1em;
-}
-
 .recent-cars {
     border-top: 2px solid #007bff;
     margin-bottom: 2em;
@@ -140,6 +151,7 @@
     border-radius: 0 0 0.5em 0.5em;
 }
 .recent-cars .card {
+    margin-top: 1em;
     width: 90%;
     border: none;
 }
