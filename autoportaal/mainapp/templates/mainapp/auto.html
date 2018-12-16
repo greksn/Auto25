@@ -1,0 +1,79 @@
+{% extends 'mainapp/base.html' %}
+{% block title %}Postitused - Auto25, suurim valik uusi ja kasutatud sõidukeid Eestis{% endblock %}
+{% block description %}Auto25 portaali foorumipostitused{% endblock %}
+{% block keywords %}foorum, autod, kuulutused, mark, mudel, ferrari, bmw, audi, lada{% endblock %}
+{% block navbar %}
+{% include 'mainapp/partials/normal_navbar.html' %}
+{% endblock navbar %}
+{% block content %}
+
+{{ form.errors }}
+{{ form.non_field_errors }}
+
+<div class="container car-ad">
+    <h5 class="mt-5">{{ car.brand }} {{ car.model }}</h5>
+    <div class="row graybg pb-2">
+        <div class="col-lg-7 px-4 carinfo">
+            <div class="row py-1">
+                <div class="col-lg-3">
+                    <strong>Tootja</strong>
+                </div>
+                <div class="col-lg-3 offset-lg-4">
+                    {{ car.brand }}
+                </div>
+            </div>
+            <div class="row py-1">
+                <div class="col-lg-3">
+                    <strong>Mudel</strong>
+                </div>
+                <div class="col-lg-3  offset-lg-4">
+                    {{ car.model }}
+                </div>
+            </div>
+            <div class="row py-1">
+                <div class="col-lg-3">
+                    <strong>Aasta</strong>
+                </div>
+                <div class="col-lg-3  offset-lg-4">
+                    {{ car.year }}
+                </div>
+            </div>
+            <div class="row py-1">
+                <div class="col-lg-3">
+                    <strong>Käigukast</strong>
+                </div>
+                <div class="col-lg-3  offset-lg-4">
+                    {{ car.gear_box }}
+                </div>
+            </div>
+            <div class="row py-1">
+                <div class="col-lg-3">
+                    <strong>Kütus</strong>
+                </div>
+                <div class="col-lg-3  offset-lg-4">
+                    {{ car.fuel }}
+                </div>
+            </div>
+            <div class="row py-1">
+                <div class="col-lg-3">
+                    <strong>Hind</strong>
+                </div>
+                <div class="col-lg-3  offset-lg-4">
+                    <strong class="primarycolor">{{ car.price|stringformat:"i" }} €</strong>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-12">
+                    <strong>Kontaktisik:</strong> {{ car.owner }}<br>
+                    <strong>Telefon:</strong> {{ car.telephone }}<br>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <img class="car-image" src="{{ car.pic.url }}">
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

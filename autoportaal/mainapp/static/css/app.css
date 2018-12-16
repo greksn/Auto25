@@ -5,7 +5,7 @@
 
 @media (max-width: 576px) {
     .navbar {
-        background: #343a40;
+        background: #343a40 !important;
     }
 }
 
@@ -32,7 +32,7 @@
 }
 
 .navbar-light {
-    background-color: #00000033;
+    background-color: #00000022;
 }
 
 .navbar {
@@ -144,19 +144,36 @@
     color: #007bff;
 }
 
-.recent-cars {
+.carinfo .py-1 {
+    border-bottom:  1px solid #00000022;
+}
+
+.graybg {
     border-top: 2px solid #007bff;
     margin-bottom: 2em;
     background-color: #F8F8F8;
     border-radius: 0 0 0.5em 0.5em;
 }
-.recent-cars .card {
+.graybg .card {
     margin-top: 1em;
     width: 90%;
     border: none;
 }
 
-.recent-cars .card-img-top {
+.graybg .card-img-top {
     width:auto;
     max-height:150px;
+}
+
+.car-ad {
+    padding: 0px;
+}
+
+.carlink {
+    color: inherit;
+}
+
+.car-image {
+    width: 100%;
+    height: auto;
 }

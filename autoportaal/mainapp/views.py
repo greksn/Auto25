@@ -85,6 +85,10 @@ def forumpost(request, id):
         Tracker.objects.create_from_request(request, thread)
         return render(request, 'mainapp/forumposts.html', {'nbar': 'foorumid', 'posts': posts, 'thread': thread})
 
+def auto(request, id):
+    car = Post.objects.get(id=id)
+    return render(request, 'mainapp/auto.html', {'nbar': 'foorumid', 'car': car})
+
 
 def uudised(request):
     # if this is a POST request we need to process the form data

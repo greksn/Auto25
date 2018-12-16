@@ -79,14 +79,14 @@
 <div class="container">
     <div class="row">
         <h5 class="mt-5">Viimati lisatud kuulutused</h5>
-        <div class="col-lg-12 recent-cars pt-3 pb-4">
+        <div class="col-lg-12 graybg pt-3 pb-4">
             <div class="row">
                 {% for ad in car_ads %}
                 <div class="col-lg-3">
-                    <div class="card">
+                    <div class="card recent-car">
                         <img class="card-img-top" src="{{ ad.pic.url }}" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">{{ ad.brand }} {{ ad.model }}</h5>
+                            <h5 class="card-title"><a class="carlink" href="/auto/{{ ad.id }}">{{ ad.brand }} {{ ad.model }}</a></h5>
                             <span class="float-left">{{ ad.year }}</span><span class="float-right"><strong class="primarycolor">{{ ad.price|stringformat:"i"  }}€</strong></span>
                         </div>
                     </div>

@@ -9,6 +9,7 @@ urlpatterns = [
     path('uued', views.uued, name='uued'),
     path('foorumid', views.foorumid, name='foorumid'),
     path('foorumid/<int:id>', views.forumpost, name='forumpost'),
+    path('auto/<int:id>', views.auto, name='auto'),
     path('uudised', views.uudised, name='uudised'),
     path('kontakt', views.kontakt, name='kontakt'),
     path('add_post', views.add_post, name="add_post"),
